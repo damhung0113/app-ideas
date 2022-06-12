@@ -1,0 +1,28 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to "Home", root_path %></li>
+    <li class="breadcrumb-item active"><%= "Binary to Decimal Converter" %></li>
+  </ol>
+</nav>
+
+<h2>Binary to Decimal Converter</h2>
+
+<div class="bin-to-dec-index">
+  <%= form_tag bin_to_dec_index_path, method: :get, class: "form" do %>
+    <div class="field">
+      <%= label_tag :binary_text, "Binary Input" %>
+      <%= text_field_tag :binary_text, params[:binary_text], class: "form-control", placeholder: "1001" %>
+      <% if @error %>
+        <span style="color: red;"><%= @error %></span>
+      <% end %>
+    </div>
+    <div class="mt-3 mb-3">
+      <%= submit_tag "Convert", class: "btn btn-primary" %>
+    </div>
+
+    <div class="field">
+      <%= label_tag :result, "Decimal Output" %>
+      <%= text_field_tag :result, @result, class: "form-control", disabled: true %>
+    </div>
+  <% end %>
+</div>

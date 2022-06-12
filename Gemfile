@@ -24,7 +24,7 @@ gem "bson_ext"
 gem "mongoid", "~> 7.4.0"
 
 group :development, :test do
-  gem "pry-rails", require: false
+  gem "pry-rails"
   gem "rubocop", "~> 1.26", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.14.0", require: false
